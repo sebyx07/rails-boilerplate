@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require 'active_support/core_ext/integer/time'
+Dir.glob(Rails.root.join('config/environments/development/*.rb')).each { |f| require f }
+Dir.glob(Rails.root.join('config/environments/local/*.rb')).each { |f| require f }
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.

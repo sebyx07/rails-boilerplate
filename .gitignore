@@ -8,7 +8,7 @@
 /.bundle
 
 # Ignore all environment files (except templates).
-/.env*
+/.env*.local
 !/.env*.erb
 
 # Ignore all logfiles and tempfiles.
@@ -21,6 +21,8 @@
 /tmp/pids/*
 !/tmp/pids/
 !/tmp/pids/.keep
+!/tmp/database/.keep
+!/tmp/redis/.keep
 
 # Ignore storage (uploaded files in development and any SQLite databases).
 /storage/*

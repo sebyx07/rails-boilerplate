@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    volumes:
+      - ../../../tmp/database/pgdata:/var/lib/postgresql/data
+      - ../../../tmp/database/pgsocket:/var/run/postgresql
+
+  redis:
+    image: redis:latest
+    command: redis-server --unixsocket /var/run/redis/redis.sock --unixsocketperm 777
+    volumes:
+      - ../../../tmp/redis:/var/run/redis

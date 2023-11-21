@@ -19,10 +19,28 @@ group :development do
   gem 'annotate', '~> 3.2'
   gem 'spring', '~> 4.1', '>= 4.1.2'
   gem 'spring-commands-rspec', '~> 1.0', '>= 1.0.4'
+  gem 'redis', '~> 5.0', '>= 5.0.8'
 end
 
-group :test, :test do
+group :test, :development do
   gem 'rspec-rails', '~> 6.1'
-  gem 'factory_bot_rails', '~> 6.4'
+  gem 'factory_bot_rails', git: 'https://github.com/leoarnold/factory_bot_rails.git', ref: '8205851fabc026968d82f9fbd50b7ae9f2b5b1e1'
+  gem 'ffaker', '~> 2.23'
 end
+
+group :production do
+  gem 'hiredis-client', '~> 0.18.0'
+  gem 'bugsnag', '~> 6.26'
+end
+
+group :test do
+  gem 'vcr', '~> 6.2'
+  gem 'webmock', '~> 3.19', '>= 3.19.1'
+  gem 'database_cleaner-active_record', '~> 2.1'
+  gem 'shoulda-matchers', '~> 5.3'
+end
+
+gem 'sidekiq', '~> 7.2'
 gem 'dotenv-rails', '~> 2.8', '>= 2.8.1'
+gem 'sidekiq-cron', '~> 1.11'
+gem 'devise', '~> 4.9', '>= 4.9.3'

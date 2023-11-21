@@ -1,0 +1,11 @@
+:verbose: false
+:concurrency: <%= ENV['SIDEKIQ_CONCURRENCY'] %>
+:timeout: 25
+:queues:
+  - critical
+  - default
+  - low
+  - wise
+
+production:
+  :concurrency: <%= Etc.nprocessors * 10 %>

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require 'active_support/core_ext/integer/time'
+Dir.glob(Rails.root.join('config/environments/test/*.rb')).each { |f| require f }
+Dir.glob(Rails.root.join('config/environments/local/*.rb')).each { |f| require f }
 
 # The test environment is used exclusively to run your application's
 # test suite. You never need to work with it otherwise. Remember that
@@ -17,7 +19,8 @@ Rails.application.configure do
   # this is usually not necessary, and can slow down your test suite. However, it's
   # recommended that you enable it in continuous integration systems to ensure eager
   # loading is working properly before deploying your code.
-  config.eager_load = ENV['CI'].present?
+  config.eager_load = true
+  config.cache_classes = false
 
   # Configure public file server for tests with Cache-Control for performance.
   config.public_file_server.enabled = true
