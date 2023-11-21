@@ -6,12 +6,12 @@ ruby '3.2.2'
 
 gem 'rails', '~> 7.1.2'
 gem 'pg', '~> 1.5', '>= 1.5.4'
-gem 'puma', '~> 6.4'
+gem 'falcon', '~> 0.42.3'
 gem 'tzinfo-data', platforms: %i[ windows jruby ]
 gem 'bootsnap', '~> 1.17', require: false
 
 group :development, :test do
-  gem 'debug', platforms: %i[ mri windows ]
+  # gem 'debug', platforms: %i[ mri windows ]
 end
 
 group :development do
@@ -20,6 +20,7 @@ group :development do
   gem 'spring', '~> 4.1', '>= 4.1.2'
   gem 'spring-commands-rspec', '~> 1.0', '>= 1.0.4'
   gem 'redis', '~> 5.0', '>= 5.0.8'
+  gem 'web-console', '~> 4.2', '>= 4.2.1'
 end
 
 group :test, :development do
@@ -44,3 +45,7 @@ gem 'sidekiq', '~> 7.2'
 gem 'dotenv-rails', '~> 2.8', '>= 2.8.1'
 gem 'sidekiq-cron', '~> 1.11'
 gem 'devise', '~> 4.9', '>= 4.9.3'
+gem 'jb', '~> 0.8.2'
+gem 'oj', '~> 3.16', '>= 3.16.1'
+gem 'jit_preloader', '~> 2.0'
+gem 'pry-rails', '~> 0.3.9'

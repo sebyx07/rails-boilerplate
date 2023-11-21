@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  devise_for :users
-  get 'up' => 'rails/health#show', as: :rails_health_check
+  # devise_for :users
+  # get 'up' => 'rails/health#show', as: :rails_health_check
+
+  namespace :api do
+    resource :session, only: [:create, :destroy, :show]
+  end
 end

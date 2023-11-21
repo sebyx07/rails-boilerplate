@@ -4,5 +4,9 @@ inherit_gem:
 
 Style/StringLiterals:
   EnforcedStyle: single_quotes
+
 Style/ClassAndModuleChildren:
   EnforcedStyle: nested
+
+Lint/Debugger:
+  Enabled: true
