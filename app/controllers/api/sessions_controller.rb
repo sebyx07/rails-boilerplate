@@ -13,9 +13,12 @@ module Api
     end
 
     def destroy
+      request.env['warden'].logout
+      head :ok
     end
 
     def show
+      @user = current_user
     end
 
     private
