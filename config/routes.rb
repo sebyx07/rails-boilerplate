@@ -3,7 +3,11 @@
 Rails.application.routes.draw do
   namespace :api do
     resource :session, only: [:create, :destroy, :show]
-    jsonapi_resources :posts
+    jsonapi_resources :posts do
+      collection do
+        delete '/delete_all', to: 'posts#delete_all'
+      end
+    end
     jsonapi_resources :users, only: %i(index show)
     jsonapi_resources :comments
   end
