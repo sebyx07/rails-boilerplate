@@ -7,5 +7,12 @@ module Api
 
     has_one :user
     has_one :post
+
+    before_save do
+      model.user = current_user if model.new_record?
+    end
+
+    before_update :authorize_user
+    before_remove :authorize_user
   end
 end
