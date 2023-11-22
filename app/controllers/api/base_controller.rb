@@ -18,5 +18,10 @@ module Api
         return @current_user = nil if user_id.blank?
         @current_user = User.find(user_id)
       end
+
+      def require_current_user
+        return if current_user
+        render json: { error: 'Unauthorized' }, status: :unauthorized
+      end
   end
 end

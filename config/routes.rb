@@ -3,6 +3,9 @@
 Rails.application.routes.draw do
   namespace :api do
     resource :session, only: [:create, :destroy, :show]
+    jsonapi_resources :posts
+    jsonapi_resources :users, only: %i(index show)
+    jsonapi_resources :comments
   end
 
   get 'up' => 'rails/health#show', as: :rails_health_check
