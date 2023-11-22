@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <title>Rails Boilerplate</title>
+    <%= csrf_meta_tags %>
+    <%= vite_client_tag %>
+    <%= vite_react_refresh_tag %>
+
+    <%= vite_javascript_tag 'application' %>
+    <%= vite_stylesheet_tag 'application.scss' %>
+    <%= vite_stylesheet_tag 'tailwind.css' %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

@@ -6,7 +6,7 @@ ruby '3.2.2'
 
 gem 'rails', '~> 7.1.2'
 gem 'pg', '~> 1.5', '>= 1.5.4'
-gem 'falcon', '~> 0.42.3'
+gem 'puma', '~> 6.4'
 gem 'tzinfo-data', platforms: %i[ windows jruby ]
 gem 'bootsnap', '~> 1.17', require: false
 
@@ -32,6 +32,7 @@ end
 group :production do
   gem 'hiredis-client', '~> 0.18.0'
   gem 'bugsnag', '~> 6.26'
+  gem 'falcon', '~> 0.42.3'
 end
 
 group :test do
@@ -49,3 +50,4 @@ gem 'jb', '~> 0.8.2'
 gem 'oj', '~> 3.16', '>= 3.16.1'
 gem 'jit_preloader', '~> 2.0'
 gem 'pry-rails', '~> 0.3.9'
+gem 'vite_rails', '~> 3.0', '>= 3.0.17'

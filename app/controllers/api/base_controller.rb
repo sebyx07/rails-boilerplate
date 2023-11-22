@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 module Api
-  class BaseController < ActionController::API
+  class BaseController < ActionController::Base
+    skip_before_action :verify_authenticity_token
     rescue_from ActiveRecord::RecordNotFound do |e|
       not_found(e)
     end

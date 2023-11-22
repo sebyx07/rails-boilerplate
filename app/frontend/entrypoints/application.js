@@ -1,0 +1,1 @@
+import '~/lib/react/mount-react-app'
