@@ -36,6 +36,6 @@
 
 /public/vite*
 node_modules
-
+.idea/
 
 *.local
