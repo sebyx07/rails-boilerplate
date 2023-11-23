@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config.merge({ path: '/admin' })
+  ActiveAdmin.routes(self)
+
   namespace :api do
     resource :session, only: [:create, :destroy, :show]
     jsonapi_resources :posts do

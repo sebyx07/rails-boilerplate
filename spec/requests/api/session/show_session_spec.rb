@@ -10,7 +10,7 @@ RSpec.describe 'GET /api/session', type: :request do
   let(:password) { SecureRandom.hex }
 
   let(:user) do
-    create(:user, password:)
+    sign_in
   end
 
   before do

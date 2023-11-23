@@ -2,6 +2,7 @@
 
 module Api
   class SessionsController < BaseController
+    before_action :require_current_user, only: %i(show destroy)
     def create
       @user = User.find_by(email: create_params[:email])
       if @user&.valid_password?(create_params[:password])

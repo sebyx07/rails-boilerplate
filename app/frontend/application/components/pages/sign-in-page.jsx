@@ -46,7 +46,7 @@ const SignInPage = () => {
         </Alert>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" required={true}
+          <Form.Control type="text" placeholder="Enter email" required={true}
                         value={email} onChange={(e) => setEmail(e.target.value)}
           />
         </Form.Group>

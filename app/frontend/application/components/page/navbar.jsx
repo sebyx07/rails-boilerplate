@@ -1,10 +1,11 @@
-import { Navbar as NavbarBoostrap, Container, Nav, NavDropdown } from "react-bootstrap";
+import { Navbar as NavbarBoostrap, Container, Nav } from "react-bootstrap";
 import {NavbarUserSession} from "@/application/components/page/navbar/navbar-user-session";
 import {Link} from "react-router-dom";
+import './navbar.scss'
 
 export const Navbar = () => {
   return(
-    <NavbarBoostrap expand="lg" variant='dark' className='bg-primary fixed w-full'>
+    <NavbarBoostrap expand="lg" variant='dark' className='bg-primary fixed w-full page--navbar'>
       <Container>
         <NavbarBoostrap.Brand>
           <Link to='/' className='no-underline'>Rails Boilerplate</Link>

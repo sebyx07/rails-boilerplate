@@ -1,0 +1,218 @@
+$tabs-width: 12rem;
+
+#header{
+  ul li a{
+    color: $white !important;
+  }
+}
+
+#site_title{
+  color: white;
+}
+
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#active_admin_content {
+  flex: 1;
+}
+body{
+  padding-top: 0 !important;
+}
+
+#title_bar{
+  margin-top: 4rem;
+}
+
+#footer{
+  background-color: $gray-900 !important;
+  color: $white;
+  margin-top: auto;
+  text-align: right;
+  a {
+    color: $white;
+    font-weight: bold;
+  }
+
+  p{
+    margin: 0.4rem 0 0.4rem;
+  }
+}
+
+#filters_sidebar_section{
+  .select2-container{
+    width: 100% !important;
+  }
+}
+
+#sidebar{
+  display: block;
+  position: static !important;
+  .sidebar_section{
+    overflow-y: auto;
+  }
+  width: 100%;
+
+  .filter_form{
+    display: none;
+
+    &.show{
+      display: block;
+    }
+
+    div.input:not(.filter_searchable_select){
+      input, select {
+        width: 49.5% !important;
+      }
+    }
+
+    div.date_range {
+      input:last-child{
+        float: right;
+      }
+
+      input:not(:last-child){
+        float: none !important;
+      }
+    }
+  }
+
+
+  #search_status_sidebar_section{
+    padding-top: 0;
+  }
+
+  #filters_sidebar_section {
+    h3{
+      cursor: pointer;
+    }
+
+    h3::after {
+      content: '▼'; /* Unicode character for a downward caret */
+      margin-left: 5px; /* Add some space between the text and the caret */
+      display: inline-block; /* To properly align with the h3 text */
+    }
+  }
+}
+
+#active_admin_content.with_sidebar{
+  display: flex;
+  flex-direction: column;
+
+  #main_content_wrapper{
+    order: 2;
+  }
+
+  #main_content{
+    margin-right: 0 !important;
+  }
+
+  #sidebar{
+    order: 1;
+  }
+}
+
+#main_content .panel_contents, #main_content td.col, #titlebar_left{
+  a:not(.member_link){
+    text-decoration: underline;
+    color: $gray-900 !important;
+    font-weight: bold;
+  }
+}
+
+#logout a{
+  font-size: 0;
+
+  &:before {
+    color: $white !important;
+  }
+}
+
+#header{
+  color: $white !important;
+}
+
+#utility_nav{
+  li.menu_item{
+    height: 100% !important;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem 0 1rem;
+  }
+
+  #current_user a{
+    height: auto !important;
+    &:before{
+      position: static !important;
+      margin-right: 0.3rem;
+      color: $white !important;
+    }
+  }
+}
+
+#utility_nav{
+  height: 2.5rem !important;
+
+  font-size: 1rem;
+}
+
+#logout{
+  padding: 0 !important;
+
+  a{
+    height: auto !important;
+  }
+}
+
+@media screen and (min-width: $md-width) {
+  .header #tabs{
+    width: $tabs-width;
+  }
+}
+
+.header #utility_nav #logout a:before{
+  position: static !important;
+  margin-right: 0.4rem;
+}
+
+#wrapper{
+  padding: 0 0.4rem 0 0.4rem;
+
+  @media screen and (min-width: $md-width) {
+    padding: 0;
+  }
+}
+
+body{
+  @media screen and (min-width: $md-width) {
+    padding-left: $tabs-width !important;
+  }
+}
+
+#site_title{
+  height: 2.5rem;
+  line-height: 2.5rem;
+  a{
+    color: $white !important;
+  }
+}
+
+#tabs{
+  height: calc(100% - 2.5rem) !important;
+  top: 2.5rem !important;
+
+  li{
+    background-color: $purple-dark;
+    margin-bottom: 0.3rem;
+    a{
+      font-weight: bold;
+    }
+  }
+}
+
+#main_content_wrapper, #sidebar > *, #title_bar{
+  box-shadow: 0 8px 6px -6px $gray-700;
+}

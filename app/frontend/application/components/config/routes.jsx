@@ -1,6 +1,6 @@
 import { Routes as ReactRoutes, Route } from 'react-router-dom'
 import {createContext, lazy, Suspense} from "react";
-const HomePage = lazy(() => import('../pages/home-page.tsx'));
+const HomePage = lazy(() => import('../pages/home-page.jsx'));
 const SignInPage = lazy(() => import('../pages/sign-in-page.jsx'));
 
 export const Routes = () => {

@@ -25,4 +25,8 @@ class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :post
   validates :content, presence: true
+
+  def display_name
+    "Comment #{id}"
+  end
 end

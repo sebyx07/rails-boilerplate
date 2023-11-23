@@ -27,4 +27,20 @@ class User < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :password, presence: true, length: { minimum: 6 }
+
+  def self.ransackable_attributes(auth_object = nil)
+    %w(email)
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    []
+  end
+
+  def self.search(value)
+    ransack(email_cont: value, m: 'or').result
+  end
+
+  def display_name
+    email
+  end
 end

@@ -14,5 +14,11 @@ module Api
 
     before_update :authorize_user
     before_remove :authorize_user
+
+    filter :search, apply: ->(records, value, _options) {
+      term = value[0]
+      return records if term.blank?
+      records.search(term)
+    }
   end
 end

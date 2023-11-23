@@ -22,4 +22,22 @@
 class Post < ApplicationRecord
   belongs_to :user
   has_many :comments, dependent: :destroy
+  validates :title, presence: true
+  validates :content, presence: true
+
+  def self.ransackable_attributes(auth_object = nil)
+    %w[title content user_id]
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    %w(user)
+  end
+
+  def self.search(search_value)
+    ransack(title_cont: search_value, content_cont: search_value, m: 'or').result
+  end
+
+  def display_name
+    title
+  end
 end
